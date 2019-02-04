@@ -48,8 +48,8 @@
     <?php echo $currency; ?>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
-        <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><span ><?php echo $text_account; ?></span></a>
-        </li>
+        <!-- <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><span ><?php echo $text_account; ?></span></a></li> -->
+        <li ><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" ><span ><?php echo $text_account; ?></span></a></li>
 
         <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><span ><?php echo $text_checkout; ?></span></a></li>
 
