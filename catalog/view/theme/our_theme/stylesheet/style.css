@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'Myriad Pro Regular';
+	src: url('MyriadPro-Regular.eot');
+	src: url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+	url('MyriadPro-Regular.woff') format('woff'),
+	url('MyriadPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+body.common-home {
+	color: #ffffff;
+	font-family: "Open Sans";
+	font-size: 13px;
+	font-weight: 400;
+
+}
+
+#top {
+	background-color: #4cb1ca;
+	text-shadow: none;
+}
+#top span  {
+	color: #ffffff;
+	text-shadow: none;
+
+}
+#top-links a {
+	color: #ffffff;
+	text-shadow: none;
+}
+
+#top .btn-link {
+	color: #ffffff;
+	text-shadow: none;
+}
+
+.list-inline li {
+font-family: "Myriad Pro";
+/* font-family: "Myriad Pro Regular"; */
+border-right: #fff 1px solid;
+}
+
