@@ -1,0 +1,4 @@
+tset
+<?php
+phpinfo();
+?>
