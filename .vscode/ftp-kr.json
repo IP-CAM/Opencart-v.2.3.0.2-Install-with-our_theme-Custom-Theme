@@ -7,7 +7,7 @@
 	"port": 0,
 	"fileNameEncoding": "utf8",
 	"autoUpload": true,
-	"autoDelete": true,
+	"autoDelete": false,
 	"autoDownload": false,
 	"ignore": [
 		".git",
