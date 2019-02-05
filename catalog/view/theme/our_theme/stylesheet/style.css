@@ -4,32 +4,23 @@ body.common-home {
 	font-size: 13px;
 	font-weight: 400;
 }
-
 #top {
 	background-color: #4cb1ca;
 	text-shadow: none;
 }
-#top span  {
-	color: #ffffff; 
+#top span, #top-links a, #top .btn-link  {
+	color: #bef2ff;
 	text-shadow: none;
- 
-}
-#top-links a {
-	color: #ffffff;
-	text-shadow: none;
+	font-size: 13px;
+font-weight: 400;
 }
 
-#top .btn-link {
-	color: #ffffff;
-	
-	text-shadow: none;
-}
+/* #top span:last-child{
+	color: #d4ff88;
+	} */
 
 .list-inline li {
 font-family: "Myriad Pro";
-/* font-family: "Myriad Pro Regular"; */
-/* border-right: #fff 1px solid; */
-
 }
 
 .list-inline li::after{
@@ -43,9 +34,58 @@ font-family: "Myriad Pro";
 	height: 11px;
 } 
 
-ul .dropdown-menu {
-	background-color: #4cb1ca;
+/* */
+#top ul .btn-link {
+	color: #000000;
 }
-.dropdown-menu {
+/* ul .dropdown-menu, .dropdown-menu {
 	background-color: #4cb1ca;
+} */
+
+.modal-list {
+	list-style: none;
+	padding: 0;
+}
+
+#logo a {
+	color: #656565;
+font-family: "Open Sans";
+font-size: 36px;
+font-weight: 700;
+text-transform: uppercase;
+/* Text style for "L, EO Shop" */
+letter-spacing: -0.9px;
+}
+
+
+.navbar-nav li a {
+	color: #656565;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* Text style for "Home" */
+	letter-spacing: -0.14px;	
+}
+
+#search {
+	margin: 0;
+	padding: 0;
+	width: 174px;
+	height: 29px;
+	border: 1px solid #c6c6c6;
+	background-color: #ffffff;
+		
+}
+#search .btn-lg {
+	padding: 0;
+	margin: 0;
+	
+
+	
+}
+
+.input-group-btn button .btn-lg{
+	background-color: #ffffff;
+	height: 29px;	
 }
