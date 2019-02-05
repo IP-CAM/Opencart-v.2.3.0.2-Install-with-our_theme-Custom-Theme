@@ -23,7 +23,7 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 
-<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/theme/our_theme/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/our_theme/stylesheet/fonts.css" rel="stylesheet">
 <link href="catalog/view/theme/our_theme/stylesheet/style.css" rel="stylesheet">
       
@@ -99,7 +99,7 @@
       <div class="col-sm-5">
 				<?php echo $search; ?>
 
-				<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a>
+				<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> </a>
 
 				
 				<?php echo $cart; ?>

@@ -78,14 +78,63 @@ letter-spacing: -0.9px;
 		
 }
 #search .btn-lg {
-	padding: 0;
+	padding: 0 9px;
 	margin: 0;
-	
+	text-shadow: none;	
+	background-image: none; 
+	background-color: #fff;
+	border: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 
-	
+	-webkit-border-radius: none;
+
+	        border-radius: none;
+
+
 }
-
-.input-group-btn button .btn-lg{
-	background-color: #ffffff;
+#search .input-lg {
 	height: 29px;	
+	border: none;
 }
+
+
+#wishlist-total i{
+width: 35px;
+height: 35px;
+padding-top: 11px;
+padding-left: 10px;
+	background-color: #7db122;
+	color: #fff;
+-webkit-border-radius: 50%;
+				border-radius: 50%;	
+				
+}
+
+#cart {
+	width: auto;
+	/* background-color: #7db122; */
+	color: #fff;
+-webkit-border-radius: 50%;
+        border-radius: 50%;	
+	
+}
+
+#cart i {
+	width: 35px;
+	height: 35px;
+	padding-top: 11px;
+	padding-left: 0px;
+		background-color: #7db122;
+		color: #fff;
+	-webkit-border-radius: 50%;
+					border-radius: 50%;	
+}
+
+#cart .btn-lg {
+	/* background-color: #7db122; */
+	/* color: #fff; */
+	background: none;
+	border: none;
+	}
+	
