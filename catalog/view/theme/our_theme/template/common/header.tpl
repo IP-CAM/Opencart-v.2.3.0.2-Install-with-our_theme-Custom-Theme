@@ -23,9 +23,8 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 
-<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/theme/our_theme/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/our_theme/stylesheet/fonts.css" rel="stylesheet">
-<link href="catalog/view/theme/our_theme/stylesheet/style.css" rel="stylesheet">
       
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -40,6 +39,8 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
+<link href="catalog/view/theme/our_theme/stylesheet/style.css" rel="stylesheet">
+
 </head>
 <body class="<?php echo $class; ?>">
 <nav id="top">
@@ -85,7 +86,7 @@
         </div>
 			</div>
 			
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 					<?php if ($categories) { ?>
 						<ul class="nav navbar-nav">
 							<li><a href="<?php echo $home; ?>">Home</a></li>
@@ -96,13 +97,14 @@
 					<?php } ?>
 
 			</div>
-      <div class="col-sm-5">
-				<?php echo $search; ?>
+      <div class="col-sm-4">
+				<div class="header-cart-wrap">
+					<?php echo $search; ?>
 
-				<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a>
+					<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> </a>
 
-				
-				<?php echo $cart; ?>
+					<?php echo $cart; ?>
+				</div>
       </div>
       
     </div>

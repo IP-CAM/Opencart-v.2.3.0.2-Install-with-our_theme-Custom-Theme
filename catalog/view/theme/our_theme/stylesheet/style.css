@@ -53,39 +53,178 @@ font-family: "Open Sans";
 font-size: 36px;
 font-weight: 700;
 text-transform: uppercase;
-/* Text style for "L, EO Shop" */
+
 letter-spacing: -0.9px;
 }
 
 
-.navbar-nav li a {
+.navbar-nav>li>a {
 	color: #656565;
 	font-family: "Open Sans";
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
-	/* Text style for "Home" */
+	
 	letter-spacing: -0.14px;	
+}
+
+header {
+	height: 107px;
+	padding-top: 23px;
 }
 
 #search {
 	margin: 0;
-	padding: 0;
-	width: 174px;
+	/* padding: 0; */
+	width: 172px;
 	height: 29px;
 	border: 1px solid #c6c6c6;
 	background-color: #ffffff;
 		
 }
-#search .btn-lg {
-	padding: 0;
-	margin: 0;
-	
 
+#search .input-lg {
+	height: 29px;	
+	border: none;
+}
+
+#search .btn-lg {
+	height: 29px;	
+	width: 30px;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border: none;
+
+	/*  */
+	text-shadow: none;	
+	background-image: none; 
+	background-color: #fff;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	border-radius: none;
+	/*  */
+background: transparent	url()	0 0 no-repeat;
+
+}
+
+a#wishlist-total, a.wishlist-link, #cart button.btn-lg {
+
+	display: block;
+	width: 35px;
+	height: 35px;
+	background: #7db122 url()	0 0 no-repeat;;
+	border-radius: 50%;
+	border: none;
+	color: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-ms-flex-line-pack: center;
+	    -webkit-box-align: center;
+	        -ms-flex-align: center;
+	            align-items: center;
+}
+
+
+#wishlist-total i{
+
+	/* width: 35px; */
+	/* height: 35px; */
+/* padding-top: 11px; */
+/* padding-left: 10px; */
+	/* background-color: #7db122; */
+	/* color: #fff; */
+	/* border-radius: 50%;	 */
+/* vertical-align: middle;				 */
+}
+
+#cart {
+	width: 35px;
+	margin: 0;
 	
 }
 
-.input-group-btn button .btn-lg{
+/* #cart i {
+	width: 35px;
+	height: 35px;
+	padding-top: 11px;
+	padding-left: 0px;
+
+		background-color: #7db122;
+		color: #fff;
+	border-radius: 50%;	
+} */
+
+/* #cart .btn-lg {
+	background: none;
+	border: none;
+	padding: 0;
+	}
+	 */
+
+	 .header-cart-wrap {
+		 display: -webkit-box;
+		 display: -ms-flexbox;
+		 display: flex;
+		 -webkit-box-pack: justify;
+		     -ms-flex-pack: justify;
+		         justify-content: space-between;
+		 -webkit-box-align: center;
+		     -ms-flex-align: center;
+		         align-items: center;
+		 padding-top: 7px;
+	 }
+
+	 /******************************************************/
+
+	 .owl-wrapper-outer {
+		 border: none;
+		 -webkit-box-shadow: none;
+		         box-shadow: none;
+	 }
+
+
+.owl-controls .owl-buttons .owl-prev,.owl-controls .owl-buttons .owl-next {
+		
+	width: 67px;
+	height: 67px;
 	background-color: #ffffff;
-	height: 29px;	
+	color: #cdcdcd;
+	font-family: "Font Awesome";
+	font-size: 55px;
+	font-weight: 400; 
+	border-radius: 50%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+					justify-content: center;		
+					
+}
+
+.owl-controls .owl-buttons .owl-prev{
+	left: 127px;
+}
+.owl-controls .owl-buttons .owl-next {
+	right: 127px;
+}
+
+
+.owl-carousel .owl-buttons div i {
+	margin: 0;
 }

@@ -5,6 +5,7 @@ define('HTTP_SERVER', 'https://store.jktu.ru/');
 // HTTPS
 define('HTTPS_SERVER', 'https://store.jktu.ru/');
 
+
 // DIR
 define('DIR_APPLICATION', '/var/www/selto149/data/www/store.jktu.ru/catalog/');
 define('DIR_SYSTEM', '/var/www/selto149/data/www/store.jktu.ru/system/');
@@ -17,6 +18,7 @@ define('DIR_DOWNLOAD', '/var/www/selto149/data/www/store.jktu.ru/system/storage/
 define('DIR_LOGS', '/var/www/selto149/data/www/store.jktu.ru/system/storage/logs/');
 define('DIR_MODIFICATION', '/var/www/selto149/data/www/store.jktu.ru/system/storage/modification/');
 define('DIR_UPLOAD', '/var/www/selto149/data/www/store.jktu.ru/system/storage/upload/');
+define('DIR_CATALOG', '/var/www/selto149/data/www/store.jktu.ru/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
