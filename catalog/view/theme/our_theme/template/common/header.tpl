@@ -101,7 +101,11 @@
 				<div class="header-cart-wrap">
 					<?php echo $search; ?>
 
+<<<<<<< HEAD
 					<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> </a>
+=======
+				<a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-tags"></i> </a>
+>>>>>>> 483c999a5a9f7116444d516eba47e328aa9cb3de
 
 					<?php echo $cart; ?>
 				</div>
