@@ -35,12 +35,12 @@
 <?php } ?>
 <?php foreach ($scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
-<?php } ?>
+<?php } ?> 
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
 <link href="catalog/view/theme/our_theme/stylesheet/style.css" rel="stylesheet">
-
+ 
 </head>
 <body class="<?php echo $class; ?>">
 <nav id="top">
