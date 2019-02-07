@@ -8,7 +8,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo $text_title; ?></h4>
       </div>
       <div class="modal-body">
 				
@@ -64,7 +64,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $text_close;?></button>
         <a href="<?php echo $cart;?>" class="btn btn-primary"><?php echo $text_cart;?></a>
       </div>
     </div>

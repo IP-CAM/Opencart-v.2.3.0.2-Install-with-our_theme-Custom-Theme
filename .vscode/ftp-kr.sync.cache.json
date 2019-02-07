@@ -22,9 +22,9 @@
     },
     "config.php": {
       "type": "-",
-      "size": 1315,
+      "size": 1422,
       "lmtime": 0,
-      "modified": false
+      "modified": true
     },
     "image": {},
     "index.php": {
@@ -45,6 +45,7 @@
       "lmtime": 0,
       "modified": false
     },
+<<<<<<< HEAD
     "system": {},
     ".gitignore": {
       "type": "-",
@@ -52,6 +53,9 @@
       "lmtime": 0,
       "modified": false
     }
+=======
+    "system": {}
+>>>>>>> ae53f90e91e21bb0f64e25768f961f222ee8513e
   },
   "$version": 1
 }
