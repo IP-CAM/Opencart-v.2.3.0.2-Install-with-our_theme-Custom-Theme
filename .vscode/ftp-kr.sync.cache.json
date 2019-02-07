@@ -22,9 +22,9 @@
     "catalog": {},
     "config.php": {
       "type": "-",
-      "size": 1315,
+      "size": 1422,
       "lmtime": 0,
-      "modified": false
+      "modified": true
     },
     "image": {},
     "index.php": {
@@ -45,13 +45,7 @@
       "lmtime": 0,
       "modified": false
     },
-    "system": {},
-    "config-dist.php": {
-      "type": "-",
-      "size": 0,
-      "lmtime": 0,
-      "modified": false
-    }
+    "system": {}
   },
   "$version": 1
 }

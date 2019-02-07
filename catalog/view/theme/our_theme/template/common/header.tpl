@@ -89,7 +89,7 @@
 			<div class="col-sm-5">
 					<?php if ($categories) { ?>
 						<ul class="nav navbar-nav">
-							<li><a href="<?php echo $home; ?>">Home</a></li>
+							<li><a href="<?php echo $home; ?>"><?php	echo $text_home;?></a></li>
 							<?php foreach ($categories as $category) { ?>
 								<li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
 							<?php } ?>
