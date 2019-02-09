@@ -14,7 +14,9 @@ $_['heading_title']				= 'Warenkorb';
 $_['text_success']				= '<a href="%s">%s</a> wurde dem <a href="%s">Warenkorb</a> hinzugefügt.';
 $_['text_remove']				= 'Warenkorb erfolgreich aktualisiert.';
 $_['text_login']				= 'Um Preise zu sehen bitte entweder <a href="%s">anmelden</a> oder <a href="%s">registrieren</a>.';
-$_['text_items']				= '%s Artikel - %s';
+//$_['text_items']				= '%s Artikel - %s';
+$_['text_items']				= 'Warenkorb (%s)';
+
 $_['text_points']				= 'Bonuspunkte: %s';
 $_['text_next']					= 'Bitte nächsten Schritt wählen';
 $_['text_next_choice']			= 'Gutschein / Bonuspunkte einlösen oder - wenn anwendbar - Versandkosten berechnen.';

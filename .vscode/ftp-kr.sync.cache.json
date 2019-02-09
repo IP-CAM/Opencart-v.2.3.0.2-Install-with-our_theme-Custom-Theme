@@ -1,5 +1,11 @@
 {
   "ftp://store.jktu.ru@selto149_store": {
+    ".gitignore": {
+      "type": "-",
+      "size": 55,
+      "lmtime": 0,
+      "modified": false
+    },
     ".htaccess": {
       "type": "-",
       "size": 2486,
@@ -14,17 +20,11 @@
     },
     "admin": {},
     "catalog": {},
-    "config-dist.php": {
-      "type": "-",
-      "size": 0,
-      "lmtime": 0,
-      "modified": false
-    },
     "config.php": {
       "type": "-",
-      "size": 1422,
+      "size": 1315,
       "lmtime": 0,
-      "modified": true
+      "modified": false
     },
     "image": {},
     "index.php": {
@@ -45,17 +45,13 @@
       "lmtime": 0,
       "modified": false
     },
-<<<<<<< HEAD
     "system": {},
-    ".gitignore": {
+    "config-dist.php": {
       "type": "-",
-      "size": 55,
+      "size": 0,
       "lmtime": 0,
       "modified": false
     }
-=======
-    "system": {}
->>>>>>> ae53f90e91e21bb0f64e25768f961f222ee8513e
   },
   "$version": 1
 }

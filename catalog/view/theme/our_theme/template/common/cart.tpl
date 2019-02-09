@@ -1,6 +1,5 @@
 <div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="modal" data-target="#modalCart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"></span></button>
-
+  <button type="button" data-toggle="modal" data-target="#modalCart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> </button>
 
 <!-- Modal -->
 <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -73,4 +72,5 @@
 
 
 </div>
-<?php echo $text_items; ?>
+
+<span id="cart-total"><?php echo $text_items; ?></span>
