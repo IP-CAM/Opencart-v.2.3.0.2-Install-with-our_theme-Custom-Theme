@@ -25,16 +25,20 @@
         <?php } ?>
 			</div>
 			
-			<?php if ($product['special']) { ?>
-				<div class="flag-sale">
-				<?php echo "SALE";?>
-				</div>
-			<?php } ?>
 
       <div class="button-group">
         <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"></span></button>
-      </div>
-    </div>
+			</div>
+			
+
+		</div>
+
+		<?php if ($product['special']) { ?>
+			<div class="flag-sale_wrap">
+				<span class="flag-sale"><?php echo "SALE";?></span>
+			</div>
+		<?php } ?>
+
   </div>
   <?php } ?>
 </div>
