@@ -8,11 +8,11 @@ function getURLVar(key) {
 
 		for (i = 0; i < part.length; i++) {
 			var data = part[i].split('=');
-
+ 
 			if (data[0] && data[1]) {
 				value[data[0]] = data[1];
 			}
-		}
+		}  
 
 		if (value[key]) {
 			return value[key];

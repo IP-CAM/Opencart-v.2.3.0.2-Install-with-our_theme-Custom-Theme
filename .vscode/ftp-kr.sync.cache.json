@@ -22,16 +22,16 @@
     "catalog": {},
     "config.php": {
       "type": "-",
-      "size": 1315,
+      "size": 1422,
       "lmtime": 0,
-      "modified": false
+      "modified": true
     },
     "image": {},
     "index.php": {
       "type": "-",
-      "size": 312,
+      "size": 313,
       "lmtime": 0,
-      "modified": false
+      "modified": true
     },
     "info.php": {
       "type": "-",
@@ -45,13 +45,7 @@
       "lmtime": 0,
       "modified": false
     },
-    "system": {},
-    "config-dist.php": {
-      "type": "-",
-      "size": 0,
-      "lmtime": 0,
-      "modified": false
-    }
+    "system": {}
   },
   "$version": 1
 }
