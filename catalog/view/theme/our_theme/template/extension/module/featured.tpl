@@ -18,18 +18,17 @@
 					<?php if ($product['price']) { ?>
 						<p class="price">
 						<?php if (!$product['special']) { ?>
-					
 						<?php echo $product['price']; ?>
 						<?php } else { ?>
 							<span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
 						<?php } ?>
 						</p>
 					<?php } ?>
+
 			</div>
 
         <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"></span></button>
 			</div>
-
 		</div>
 
 		<?php if ($product['special']) { ?>

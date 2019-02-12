@@ -25,12 +25,32 @@
           <ul class="thumbnails">
             <?php if ($thumb) { ?>
             <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-            <?php } ?>
+						<?php } ?>
+
+            <!-- <?php if ($images) { ?> -->
+            <!-- <?php foreach ($images as $image) { ?> -->
+							<!-- <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li> -->
+						<!-- <?php } ?> -->
+						<!-- <?php } ?> -->
+
+
+						<div id="carousel_product" class="owl-carousel">
+
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
-            <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-            <?php } ?>
-            <?php } ?>
+							<div class="item text-center">
+
+							<li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+
+							</div>
+
+						<?php } ?>
+						<?php } ?>
+						</div>
+						
+    				<!-- <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a> -->
+				    <!-- <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /> -->
+
           </ul>
           <?php } ?>
           <ul class="nav nav-tabs">
@@ -146,10 +166,8 @@
               <h2><?php echo $special; ?></h2>
             </li>
             <?php } ?>
-            <?php if ($tax) { ?>
-            <li><?php echo $text_tax; ?> <?php echo $tax; ?></li>
-            <?php } ?>
-            <?php if ($points) { ?>
+
+						<?php if ($points) { ?>
             <li><?php echo $text_points; ?> <?php echo $points; ?></li>
             <?php } ?>
             <?php if ($discounts) { ?>
@@ -290,7 +308,7 @@
             <?php } ?>
             <div class="form-group">
               <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
-              <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
+              <input type="number" name="quantity" value="<?php echo $minimum; ?>" size="2" min="<?php echo $minimum; ?>" id="input-quantity" class="form-control" />
               <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
               <br />
               <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
@@ -424,7 +442,7 @@ $('#button-cart').on('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
-		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		data: $('#product input[type=\'text\'], #product input[type=\'number\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-cart').button('loading');
@@ -458,14 +476,14 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				// $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				// $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 				$('#cart-total').html( json['total']);
 
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
-
-				$('#cart > ul').load('index.php?route=common/cart/info ul li');
+				$('.modal-body').load('index.php?route=common/cart/info .modal-list');
+				$('#modalCart').modal();
+				// $('html, body').animate({ scrollTop: 0 }, 'slow');
+				// $('#cart > ul').load('index.php?route=common/cart/info ul li');
 			}
 		},
         error: function(xhr, ajaxOptions, thrownError) {
@@ -593,4 +611,16 @@ $(document).ready(function() {
 	});
 });
 //--></script>
+
+<script type="text/javascript">
+$('#carousel_product').owlCarousel({
+	items: 3,
+	autoPlay: 3000,
+	navigation: true,
+	navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+	pagination: true
+});
+</script>
+
+
 <?php echo $footer; ?>

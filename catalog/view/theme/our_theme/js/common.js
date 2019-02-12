@@ -234,6 +234,7 @@ var cart = {
 				} else {
 					// $('#cart > ul').load('index.php?route=common/cart/info ul li');
 					$('.modal-body').load('index.php?route=common/cart/info .modal-list');
+					$('#modalCart').modal();
 
 				}
 			},
