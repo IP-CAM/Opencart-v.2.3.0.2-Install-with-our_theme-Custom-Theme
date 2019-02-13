@@ -23,7 +23,7 @@
 				type: "POST",
 				url: "catalog/view/theme/our_theme/template/feedback/phpmailer/mail.php",
 				data: $(this).serialize()
-			}).done(function () {
+			}).done(function () { 
 				$(this).find("input").val("");
 				$("form").trigger("reset");
 			});
