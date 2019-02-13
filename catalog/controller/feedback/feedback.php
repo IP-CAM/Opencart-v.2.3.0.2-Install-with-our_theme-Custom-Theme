@@ -15,9 +15,9 @@ class ControllerFeedbackFeedback extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
- 
-		$data['feedback'] = $this->load->controller('feedback/feedback');
- 
+	
+		$data['config_email'] = $this->config->get('config_email');
+
 		$this->response->setOutput($this->load->view('feedback/feedback', $data));
 	}
 }
