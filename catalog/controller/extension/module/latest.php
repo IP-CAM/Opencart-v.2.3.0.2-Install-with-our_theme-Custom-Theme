@@ -4,7 +4,6 @@ class ControllerExtensionModuleLatest extends Controller {
 		$this->load->language('extension/module/latest');
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
 		//  added
 		$data['column_right'] = $this->load->controller('common/column_right');
 

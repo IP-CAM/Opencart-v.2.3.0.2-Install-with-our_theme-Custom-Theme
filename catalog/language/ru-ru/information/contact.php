@@ -1,18 +1,18 @@
 <?php
 // Heading
-$_['heading_title']  = 'Обратная связь';
+$_['heading_title']  = 'Контакты';
 
 // Text
 $_['text_location']  = 'Наше местонахождение';
 $_['text_store']     = 'Наши магазины';
-$_['text_contact']   = 'Написать нам';
+$_['text_contact']   = 'Форма обратной связи';
 $_['text_address']   = 'Адрес';
 $_['text_telephone'] = 'Телефон';
 $_['text_fax']       = 'Факс';
 $_['text_open']      = 'Режим работы';
 $_['text_comment']   = 'Дополнительная информация';
 $_['text_success']   = '<p>Ваше сообщение успешно отправлено владельцу магазина!</p>';
-$_['button_submit']         = 'Отправить сообщение';
+$_['button_submit']  = 'Отправить сообщение';
 
 // Entry
 $_['entry_name']     = 'Ваше имя';

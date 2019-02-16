@@ -27,12 +27,6 @@
             <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
 						<?php } ?>
 
-            <!-- <?php if ($images) { ?> -->
-            <!-- <?php foreach ($images as $image) { ?> -->
-							<!-- <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li> -->
-						<!-- <?php } ?> -->
-						<!-- <?php } ?> -->
-
 
 						<div id="carousel_product" class="owl-carousel">
 
@@ -48,8 +42,6 @@
 						<?php } ?>
 						</div>
 						
-    				<!-- <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a> -->
-				    <!-- <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /> -->
 
           </ul>
           <?php } ?>

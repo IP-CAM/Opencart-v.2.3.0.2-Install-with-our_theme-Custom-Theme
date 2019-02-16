@@ -73,6 +73,14 @@
       </div>
       <?php } ?>
 
+			<!-- Put this div tag to the place, where the Comments block will be -->
+			<div id="vk_comments"></div>
+			<script type="text/javascript">
+			VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+			</script>
+			
+			<div class="fb-comments" data-href="http://b92085mx.beget.tech" data-numposts="5"></div>
+
       <?php if ($comments_vk) { ?>
       <div class="row">
         <div class="col-md-12">

@@ -4,8 +4,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 		$this->load->language('extension/module/featured');
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
-//  added
+	//  added
 		$data['column_right'] = $this->load->controller('common/column_right');
 
 		$data['text_tax'] = $this->language->get('text_tax');

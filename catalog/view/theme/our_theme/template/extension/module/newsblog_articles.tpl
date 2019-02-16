@@ -4,6 +4,7 @@
 <?php if ($html) { ?>
 <?php echo $html; ?>
 <?php } ?>
+
 <div class="row">
   <?php foreach ($articles as $article) { ?>
   <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -16,14 +17,12 @@
         <?php echo $article['preview']; ?>
       </div>
       <div class="button-group">
-		<button onclick="location.href = ('<?php echo $article['href']; ?>');" data-toggle="tooltip" title="<?php echo $text_more; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_more; ?></span></button>
-		<?php if ($article['date']) { ?><button type="button" data-toggle="tooltip" title="<?php echo $article['date']; ?>"><i class="fa fa-clock-o"></i></button><?php } ?>
-		<button type="button" data-toggle="tooltip" title="<?php echo $article['viewed']; ?>"><i class="fa fa-eye"></i></button>
-	  </div>
+	  	</div> 
     </div>
   </div>
   <?php } ?>
 </div>
+
 <?php if ($link_to_category) { ?>
 <a href="<?php echo $link_to_category; ?>"><?php echo $text_more; ?> <?php echo $heading_title; ?></a>
 <?php } ?>

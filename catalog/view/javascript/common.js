@@ -19,6 +19,16 @@ function getURLVar(key) {
 		} else {
 			return '';
 		}
+	} else { 			// Изменения для seo_url от Русской сборки OpenCart 2x
+		var query = String(document.location.pathname).split('/');
+		if (query[query.length - 1] == 'cart') value['route'] = 'checkout/cart';
+		if (query[query.length - 1] == 'checkout') value['route'] = 'checkout/checkout';
+		
+		if (value[key]) {
+			return value[key];
+		} else {
+			return '';
+		}
 	}
 }
 
@@ -161,8 +171,7 @@ var cart = {
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						// $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i>| ' + json['total'] + ' |</span>');
+						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');

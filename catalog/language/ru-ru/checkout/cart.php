@@ -25,7 +25,7 @@ $_['text_recurring_item']    	              = 'Периодические пла
 $_['text_payment_recurring']                    = 'Платежный профиль';
 $_['text_trial_description'] 	              = 'Стоимость: %s; Периодичность: %d %s; Кол-во платежей: %d;  Далее,  ';
 $_['text_payment_description'] 	              = 'Стоимость: %s; Периодичность: %d %s; Кол-во платежей: %d';
-$_['text_payment_until_canceled_description'] = 'Стоимость: %s; Периодичность: %d %s; Кол-во платежей: до отмены';
+$_['text_payment_cancel']      = 'Стоимость: %s; Периодичность: %d %s; Кол-во платежей: до отмены';
 
 // Column
 $_['column_image']          = 'Изображение';

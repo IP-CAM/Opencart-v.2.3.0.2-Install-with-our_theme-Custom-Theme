@@ -39,10 +39,22 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
+
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 6864185, onlyWidgets: true});
+</script>
+
 <link href="catalog/view/theme/our_theme/stylesheet/style.css" rel="stylesheet">
- 
+
 </head>
 <body class="<?php echo $class; ?>">
+<div id="fb-root"></div>
+
+<script async defer src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.2&appId=275409842979756&autoLogAppEvents=1"></script>
+
 <nav id="top">
   <div class="container">
     <?php echo $language; ?>

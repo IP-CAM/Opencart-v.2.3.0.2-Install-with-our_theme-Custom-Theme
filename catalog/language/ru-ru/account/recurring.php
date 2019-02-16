@@ -109,7 +109,7 @@ $_['column_amount'] = 'Итого';
 $_['column_status'] = 'Статус';
 $_['column_product'] = 'Товар';
 $_['column_action'] = 'Действие';
-$_['column_recurring_id'] = 'ID Профиля';
+$_['column_order_recurring_id'] = 'ID Профиля';
 
 // Error
 $_['error_not_cancelled'] = 'Ошибка: %s';

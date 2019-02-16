@@ -3,8 +3,8 @@
 $_['heading_title'] = 'Использовать Бонусные баллы (доступно баллов %s)';
 
 // Text
-$_['text_reward']   = 'Reward Points (%s)';
-$_['text_order_id'] = 'Номер заказа: #%s';
+$_['text_reward']   = 'Бонусные баллы (%s)';
+$_['text_order_id'] = 'Номер заказа: %s';
 $_['text_success']  = 'Баллы успешно применены!';
 
 // Entry

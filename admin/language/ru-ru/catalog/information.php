@@ -25,7 +25,7 @@ $_['entry_keyword']          = 'SEO URL';
 $_['entry_bottom']           = 'Отображить снизу';
 $_['entry_status']           = 'Статус';
 $_['entry_sort_order']       = 'Порядок сортировки';
-$_['entry_layout']           = 'Выберите схему';
+$_['entry_layout']           = 'Макет';
 
 // Help
 $_['help_keyword']           = 'Должно быть уникальным на всю систему и без пробелов';

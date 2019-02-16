@@ -1,6 +1,0 @@
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP Warning:  require_once(/var/www/selto149/data/www/store.jktu.ru/system/startup.php): failed to open stream: No such file or directory in C:\Apache24\htdocs\store\index.php on line 17
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP Stack trace:
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP   1. {main}() C:\Apache24\htdocs\store\index.php:0
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required '/var/www/selto149/data/www/store.jktu.ru/system/startup.php' (include_path='.;C:\php\pear') in C:\Apache24\htdocs\store\index.php on line 17
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP Stack trace:
-[13-Feb-2019 17:42:41 Europe/Moscow] PHP   1. {main}() C:\Apache24\htdocs\store\index.php:0
