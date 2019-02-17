@@ -52,7 +52,6 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div id="fb-root"></div>
-
 <script async defer src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.2&appId=275409842979756&autoLogAppEvents=1"></script>
 
 <nav id="top">
