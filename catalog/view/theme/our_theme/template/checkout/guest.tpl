@@ -188,9 +188,9 @@
   			<input type="text" value="176" name="country_id" id="input-payment-country" class="form-control">
 			</div>
 
-      <div class="form-group required">
+      <div class="form-group ">
         <label class="control-label" for="input-payment-zone"><?php echo $entry_zone; ?></label>
-        <select name="zone_id" id="input-payment-zone" class="form-control">
+        <select name="zone_id" value="176" id="input-payment-zone" class="form-control">
         </select>
       </div>
       <?php foreach ($custom_fields as $custom_field) { ?>
