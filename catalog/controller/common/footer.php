@@ -47,6 +47,13 @@ class ControllerCommonFooter extends Controller {
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 
+
+		$data['store'] = $this->config->get('config_name');
+		$data['address'] = nl2br($this->config->get('config_address'));
+		$data['telephone'] = $this->config->get('config_telephone');
+		$data['email'] = $this->config->get('config_email');
+
+
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');

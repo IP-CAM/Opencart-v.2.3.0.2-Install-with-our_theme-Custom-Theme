@@ -283,3 +283,10 @@
 2019-02-16 19:03:16 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 96
 2019-02-16 19:06:15 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 96
 2019-02-16 19:06:29 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 96
+2019-02-17 18:27:07 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 18:27:09 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 21:09:59 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 21:13:22 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 21:17:38 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 21:30:52 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
+2019-02-17 21:47:17 - PHP Notice:  Undefined variable: ckeditor in C:\Apache24\htdocs\store\admin\view\template\extension\module\newsblog_articles.tpl on line 168

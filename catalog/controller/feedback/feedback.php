@@ -19,5 +19,6 @@ class ControllerFeedbackFeedback extends Controller {
 		$data['config_email'] = $this->config->get('config_email');
 
 		$this->response->setOutput($this->load->view('feedback/feedback', $data));
+
 	}
 }

@@ -13,4 +13,14 @@
 		</div>
     <?php echo $column_right; ?></div>
 </div>
+
+<div class="prefooter" id="prefooter">
+	<div class="row">
+					<div class="col-sm-6"><i class="fa fa-truck fa-stack" aria-hidden="true"></i>Free shipping on orders over $100</div>
+					<div class="col-sm-6"><i class="fa fa-phone fa-stack" aria-hidden="true"></i>Call us! toLl free 409-8888-0099</div>
+	</div>
+
+</div>
+
+
 <?php echo $footer; ?>

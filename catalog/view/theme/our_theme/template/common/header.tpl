@@ -51,6 +51,7 @@
 
 </head>
 <body class="<?php echo $class; ?>">
+
 <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.2&appId=275409842979756&autoLogAppEvents=1"></script>
 
@@ -104,6 +105,7 @@
 							<?php foreach ($categories as $category) { ?>
 								<li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
 							<?php } ?>
+							
 							<li><a href="<?php echo $feedback; ?>">Обратная связь</a></li>
 
 						</ul>
