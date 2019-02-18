@@ -5,6 +5,16 @@ class ControllerExtensionModuleCont extends Controller {
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
+		$data['store'] = $this->config->get('config_name');
+		$data['address'] = nl2br($this->config->get('config_address'));
+		$data['telephone'] = $this->config->get('config_telephone');
+		$data['email'] = $this->config->get('config_email');
+
+$data['title_store'] = $this->language->get('title_store');
+$data['title_address'] = $this->language->get('title_address');
+$data['title_telephone'] = $this->language->get('title_telephone');
+$data['title_email'] = $this->language->get('title_email');
+
 		if (isset($this->request->get['path'])) {
 			$parts = explode('_', (string)$this->request->get['path']);
 		} else {

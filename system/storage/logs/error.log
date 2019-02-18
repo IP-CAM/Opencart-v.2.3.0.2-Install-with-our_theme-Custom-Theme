@@ -290,3 +290,4 @@
 2019-02-17 21:17:38 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
 2019-02-17 21:30:52 - PHP Notice:  Undefined variable: feedback in C:\Apache24\htdocs\store\catalog\view\theme\our_theme\template\common\header.tpl on line 108
 2019-02-17 21:47:17 - PHP Notice:  Undefined variable: ckeditor in C:\Apache24\htdocs\store\admin\view\template\extension\module\newsblog_articles.tpl on line 168
+2019-02-18 7:35:28 - PHP Notice:  Undefined variable: ckeditor in C:\Apache24\htdocs\store\admin\view\template\extension\module\newsblog_articles.tpl on line 168

@@ -864,3 +864,5028 @@ FILE: catalog/controller/common/header.php
 CODE: $data['language'] = $this->load->controller('common/language');
 LINE: 162
 ----------------------------------------------------------------
+2019-02-18 7:40:09 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 8:03:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:40:42 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+
+FILE: admin/controller/extension/installer.php
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 457
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:40:46 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+
+FILE: admin/controller/extension/installer.php
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 457
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:41:15 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_opencart_patch
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+FILE: admin/controller/extension/installer.php
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 457
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:41:58 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_opencart_patch
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+FILE: admin/controller/extension/installer.php
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 457
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:52:56 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 539
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:53:08 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 539
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:57:47 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 539
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:58:03 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 539
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:58:26 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 539
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 10:59:59 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/extension/extension/dashboard.php
+CODE: 'dashboard_' . $this->request->get['extension']
+LINE: 18
+LINE: 40
+CODE: $this->load->controller('extension/dashboard/' . $this->request->get['extension'] . '/uninstall');
+LINE: 48
+CODE: $this->model_extension_extension->uninstall('dashboard', $value);
+LINE: 94
+
+FILE: admin/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 9
+LINE: 20
+
+FILE: admin/controller/extension/extension/feed.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/feed/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/fraud.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/fraud/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/module.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/module/' . $this->request->get['extension']);
+LINE: 32
+CODE: $data['extensions'][] = array(
+LINE: 166
+
+FILE: admin/controller/extension/extension/payment.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/payment/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/shipping.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/shipping/' . $this->request->get['extension']);
+LINE: 28
+
+FILE: admin/controller/extension/extension/theme.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/theme/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: admin/controller/extension/extension/total.php
+CODE: $this->model_user_user_group->addPermission($this->user->getGroupId(), 'modify', 'extension/total/' . $this->request->get['extension']);
+LINE: 29
+
+FILE: catalog/controller/event/compatibility.php
+CODE: $route = $part[1] . '/' . $part[2];
+LINE: 27
+LINE: 37
+LINE: 55
+
+FILE: system/library/cart/user.php
+CODE: return in_array($value, $this->permission[$key]);
+LINE: 72
+
+FILE: system/config/catalog.php
+CODE: $_['action_event'] = array(
+LINE: 49
+CODE: class ControllerEventCompatibility extends Controller {
+LINE: 5
+CODE: public function view(&$route, &$data) {
+LINE: 40
+
+FILE: admin/model/localisation/language.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "banner_image_description WHERE language_id = '" . (int)$language_id . "'");
+LINE: 221
+
+FILE: admin/view/template/extension/extension/analytics.tpl
+CODE: <?php } ?>
+LINE: 32
+CODE: <?php } else { ?>
+LINE: 48
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 361
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 377
+
+FILE: admin/controller/extension/installer.php
+CODE: $modification_info = $this->model_extension_modification->getModificationByCode($code);
+LINE: 457
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 72
+CODE: 'jpg',
+LINE: 288
+CODE: 'image/jpeg',
+LINE: 301
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND - OPERATION SKIPPED!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:00:18 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:00:36 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:01:01 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:05:21 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: d_event_manager_startup
+
+FILE: system/library/d_event_manager/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 44
+
+FILE: system/library/d_event_manager/event.php
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: system/library/d_event_manager/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 167
+
+FILE: system/library/d_event_manager/proxy.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:05:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+
+FILE: system/library/template/twig.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: d_event_manager_startup
+
+FILE: system/library/d_event_manager/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 44
+
+FILE: system/library/d_event_manager/event.php
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: system/library/d_event_manager/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 167
+
+FILE: system/library/d_event_manager/proxy.php
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:05:52 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: d_event_manager_startup
+FILE: system/library/d_event_manager/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 44
+FILE: system/library/d_event_manager/event.php
+NOT FOUND!
+FILE: system/library/d_event_manager/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 167
+FILE: system/library/d_event_manager/proxy.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_quickcheckout
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:05:56 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: d_event_manager_startup
+FILE: system/library/d_event_manager/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 44
+FILE: system/library/d_event_manager/event.php
+NOT FOUND!
+FILE: system/library/d_event_manager/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 167
+FILE: system/library/d_event_manager/proxy.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_quickcheckout
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 92
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
+2019-02-18 11:05:57 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+FILE: system/library/template/twig.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: d_event_manager_startup
+FILE: system/library/d_event_manager/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 44
+FILE: system/library/d_event_manager/event.php
+NOT FOUND!
+FILE: system/library/d_event_manager/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 167
+FILE: system/library/d_event_manager/proxy.php
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 33
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 81
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 84
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 87
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 109
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 115
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 155
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 101
+FILE: admin/view/template/tool/backup.tpl
+CODE: <input type="file" name="import" id="input-import" />
+LINE: 36
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 148
+CODE: $pagination = new Pagination();
+LINE: 209
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 272
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 352
+CODE: $filter_name = rtrim(str_replace('*', '', $this->request->get['filter_name']), '/');
+LINE: 31
+CODE: if (substr(str_replace('\\', '/', realpath($directory . '/' . $filter_name)), 0, strlen(DIR_IMAGE . 'catalog')) == DIR_IMAGE . 'catalog') {
+LINE: 61
+FILE: admin/view/template/common/filemanager.tpl
+CODE: <?php foreach (array_chunk($images, 4) as $image) { ?>
+LINE: 34
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 939
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 209
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 241
+FILE: admin/view/template/extension/module/html.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 80
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 95
+FILE: admin/view/template/extension/extension.tpl
+CODE: <?php echo $header; ?><?php echo $column_left; ?>
+LINE: 1
+FILE: admin/controller/common/column_left.php
+CODE: $data['lastname'] = $user_info['lastname'];
+LINE: 17
+CODE: $data['lastname'] = '';
+LINE: 31
+FILE: system/library/pagination.php
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+LINE: 35
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
+LINE: 40
+CODE: $output .= '<li><a href="' . str_replace(array('&amp;page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+LINE: 72
+FILE: catalog/controller/startup/startup.php
+CODE: $this->registry->set('openbay', new Openbay($this->registry));
+LINE: 196
+FILE: catalog/controller/information/contact.php
+CODE: $mail->setFrom($this->request->post['email']);
+LINE: 20
+----------------------------------------------------------------
+MOD: d_event_manager
+CODE: public function __construct($registry) {
+LINE: 8
+CODE: public function controller($route, $args = array()) {
+NOT FOUND!
+CODE: public function controller($route, $data = array()) {
+LINE: 12
+CODE: public function model($model) {
+NOT FOUND!
+CODE: public function model($model, $data = array()) {
+NOT FOUND!
+CODE: $this->registry->set('model_' . str_replace('/', '_', $model), new $class($this->registry));
+NOT FOUND!
+CODE: public function view($template, $data = array()) {
+NOT FOUND!
+CODE: public function config($config) {
+NOT FOUND!
+CODE: public function language($language) {
+NOT FOUND!
+CODE: public function __get($key) {
+NOT FOUND!
+CODE: public function __set($key, $value) {
+NOT FOUND!
+CODE: protected $registry;
+LINE: 5
+FILE: system/engine/front.php
+CODE: while ($action) {
+NOT FOUND!
+CODE: private $registry;
+NOT FOUND!
+CODE: $result = $this->registry->get('event')->trigger('controller/' . $route . '/before', array(&$route, &$data));
+NOT FOUND!
+CODE: $this->registry->get('event')->trigger('view/' . $route . '/before', array(&$route, &$data));
+NOT FOUND!
+CODE: $template = new Template('basic');
+NOT FOUND!
+CODE: $this->registry->get('event')->trigger('view/' . $route . '/after', array(&$route, &$data, &$output));
+LINE: 109
+CODE: $this->registry->get('event')->trigger('config/' . $route . '/before', $route);
+NOT FOUND!
+CODE: $this->registry->get('event')->trigger('config/' . $route . '/after', $route);
+NOT FOUND!
+CODE: $this->registry->get('event')->trigger('language/' . $route . '/before', $route);
+NOT FOUND!
+CODE: $this->registry->get('event')->trigger('language/' . $route . '/after', $route);
+NOT FOUND!
+CODE: $result = $registry->get('event')->trigger('model/' . $route . '/before', array_merge(array(&$route), $args));
+NOT FOUND!
+CODE: $result = $registry->get('event')->trigger('model/' . $route . '/after', array_merge(array(&$route, &$output), $args));
+NOT FOUND!
+FILE: system/engine/event.php
+CODE: foreach ($this->data as $key => $value) {
+NOT FOUND!
+CODE: foreach ($this->data as $trigger => $actions) {
+LINE: 24
+CODE: if (!$output) {
+LINE: 98
+----------------------------------------------------------------
+MOD: d_oc2_installer_fix
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 131
+CODE: public function sql() {
+LINE: 447
+----------------------------------------------------------------
+MOD: d_quickcheckout
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $file = DIR_TEMPLATE . $template;
+NOT FOUND!
+CODE: $output = $template->render($route . '.tpl'
+LINE: 111
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+NOT FOUND!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: NewsBlog - create unlimited categories with articles
+CODE: // Catalog
+LINE: 77
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_catalog']
+LINE: 9
+FILE: catalog/controller/common/column_left.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/column_right.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_bottom.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/common/content_top.php
+CODE: if ($route == 'information/information' && isset($this->request->get['information_id'])) {
+LINE: 42
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 52
+CODE: $url[0] != 'information_id'
+LINE: 56
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 79
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 144
+CODE: } elseif ($key == 'path') {
+LINE: 170
+FILE: catalog/controller/information/sitemap.php
+CODE: $this->load->model('catalog/information');
+LINE: 118
+FILE: catalog/view/theme/default/template/information/sitemap.tpl
+CODE: <li><?php echo $text_information; ?>
+LINE: 69
+FILE: catalog/controller/common/header.php
+CODE: $data['language'] = $this->load->controller('common/language');
+LINE: 162
+----------------------------------------------------------------
