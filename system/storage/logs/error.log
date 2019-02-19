@@ -342,3 +342,4 @@
 2019-02-18 22:30:36 - PHP Notice:  Indirect modification of overloaded property ControllerPaymentYaMoney::$data has no effect in C:\Apache24\htdocs\store\admin\controller\payment\yamoney.php on line 101
 2019-02-18 22:30:36 - PHP Notice:  Indirect modification of overloaded property ControllerPaymentYaMoney::$data has no effect in C:\Apache24\htdocs\store\admin\controller\payment\yamoney.php on line 103
 2019-02-18 22:30:36 - PHP Notice:  Indirect modification of overloaded property ControllerPaymentYaMoney::$data has no effect in C:\Apache24\htdocs\store\admin\controller\payment\yamoney.php on line 104
+2019-02-19 16:41:28 - PHP Notice:  Undefined index: comment in C:\Apache24\htdocs\store\catalog\controller\checkout\payment_method.php on line 186

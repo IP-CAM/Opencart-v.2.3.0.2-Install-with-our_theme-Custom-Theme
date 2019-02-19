@@ -188,11 +188,19 @@
   			<input type="text" value="176" name="country_id" id="input-payment-country" class="form-control">
 			</div>
 
-      <div class="form-group ">
+      <!-- <div class="form-group ">
         <label class="control-label" for="input-payment-zone"><?php echo $entry_zone; ?></label>
         <select name="zone_id" value="176" id="input-payment-zone" class="form-control">
         </select>
-      </div>
+      </div> -->
+
+			<div class="form-group required" style="display:none;">
+  			<label class="control-label" for="input-payment-zone"><?php echo $entry_zone; ?></label>
+        <input type="text" value="2761" name="zone_id" id="input-payment-zone" class="form-control">
+			</div>
+
+
+
       <?php foreach ($custom_fields as $custom_field) { ?>
       <?php if ($custom_field['location'] == 'address') { ?>
       <?php if ($custom_field['type'] == 'select') { ?>

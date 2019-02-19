@@ -1,4 +1,3 @@
-tset
 <?php
 phpinfo();
 ?>
