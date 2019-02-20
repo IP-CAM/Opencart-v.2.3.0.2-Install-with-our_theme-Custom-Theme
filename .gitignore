@@ -5,3 +5,5 @@
 .vscode/sftp.json
 config.php
 admin/config.php
+system/storage/cache/
+ 
